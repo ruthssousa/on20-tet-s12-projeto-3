@@ -25,10 +25,10 @@ getGitHubUser = async (username) => {
 }
 
 createCard = (user) => {
-  const { avatar_url, name, login, bio, followers, public_repos } = user
+  const { avatar_url, name, login, bio, followers, public_repos, html_url  } = user
   main.innerHTML = `
     <div class='card'>
-      <img class='profile-img' src=${avatar_url} alt="foto da usuária no github">
+      <a href=${html_url} target="_blank"><img class='profile-img' src=${avatar_url} alt="foto da usuária no github"></a>
       <h2 class='profile-title'>${name}</h2>
       <h4 class='profile-subtitle'>${login}</h4> 
       <p class='profile-description'>${bio ? bio : ""}</p>
